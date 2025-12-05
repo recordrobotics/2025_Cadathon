@@ -14,6 +14,8 @@ import frc.robot.commands.auto.PlannedAuto;
 import frc.robot.control.*;
 import frc.robot.dashboard.DashboardUI;
 import frc.robot.subsystems.*;
+import frc.robot.subsystems.io.real.IntakeReal;
+import frc.robot.subsystems.io.sim.IntakeSim;
 import frc.robot.utils.AutoPath;
 import frc.robot.utils.ConsoleLogger;
 import frc.robot.utils.DriverStationUtils;
@@ -71,6 +73,7 @@ public final class RobotContainer {
     public static CoralDetection coralDetection;
     public static VisionSystemSim visionSim;
     public static HumanPlayerSimulation humanPlayerSimulation;
+    public static Intake intake;
 
     private static Alert noEncoderResetAlert;
 
@@ -103,6 +106,7 @@ public final class RobotContainer {
             lights = new Lights();
             pdp = new PowerDistributionPanel();
             coralDetection = new CoralDetection();
+            intake = new Intake(new IntakeReal(ROBOT_PERIODIC));
         } else {
             if (Constants.RobotState.VISION_SIMULATION_MODE.isPhotonSim()) {
                 visionSim = new VisionSystemSim("main");
@@ -138,6 +142,7 @@ public final class RobotContainer {
             pdp = new PowerDistributionPanel();
             coralDetection = new CoralDetection();
             humanPlayerSimulation = new HumanPlayerSimulation();
+            intake = new Intake(new IntakeSim(ROBOT_PERIODIC));
         }
 
         model = new RobotModel();

@@ -526,7 +526,7 @@ public final class Constants {
         private Climber() {}
     }
 
-    public static final class ElevatorArm {
+    public static final class Intake {
 
         public static final Current ARM_SUPPLY_CURRENT_LIMIT = Amps.of(15);
         public static final Current ARM_STATOR_CURRENT_LIMIT = Amps.of(60);
@@ -559,7 +559,7 @@ public final class Constants {
 
         public static final Distance MANUAL_CONTROL_MARGIN = Meters.of(0.1);
 
-        private ElevatorArm() {}
+        private Intake() {}
     }
 
     public enum ElevatorHeight {

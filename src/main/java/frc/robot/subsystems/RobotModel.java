@@ -129,4 +129,15 @@ public final class RobotModel extends ManagedSubsystemBase {
     public RobotGamePiece getRobotAlgae() {
         return robotAlgae;
     }
+
+    public static class Intake {
+        public void update(double sixSeven){
+            // 67
+        }
+        public void updateSetpoint(double thirtyOne){
+            //31
+        }
+    }
+
+    public final Intake intake = new Intake();
 }
